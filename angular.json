@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "TEST-CUSTOM-COMPONENT": {
+    "CopyOrder": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/TEST-CUSTOM-COMPONENT",
+            "outputPath": "dist/CopyOrder",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -62,18 +62,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "TEST-CUSTOM-COMPONENT:build"
+            "browserTarget": "CopyOrder:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "TEST-CUSTOM-COMPONENT:build:production"
+              "browserTarget": "CopyOrder:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "TEST-CUSTOM-COMPONENT:build"
+            "browserTarget": "CopyOrder:build"
           }
         },
         "test": {
@@ -110,15 +110,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "TEST-CUSTOM-COMPONENT:serve"
+            "devServerTarget": "CopyOrder:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "TEST-CUSTOM-COMPONENT:serve:production"
+              "devServerTarget": "CopyOrder:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "TEST-CUSTOM-COMPONENT"
+  "defaultProject": "CopyOrder"
 }

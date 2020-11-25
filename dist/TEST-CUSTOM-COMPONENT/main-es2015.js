@@ -55,7 +55,7 @@ __webpack_require__.r(__webpack_exports__);
 
 class AppComponent {
     constructor() {
-        this.title = 'TEST-CUSTOM-COMPONENT';
+        this.title = 'CopyOrder';
     }
     ngOnInit() {
         //this runs when the comonent is rendered

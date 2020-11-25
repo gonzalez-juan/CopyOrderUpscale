@@ -90,7 +90,7 @@
         function AppComponent() {
           _classCallCheck(this, AppComponent);
 
-          this.title = 'TEST-CUSTOM-COMPONENT';
+          this.title = 'CopyOrder';
         }
 
         _createClass(AppComponent, [{
