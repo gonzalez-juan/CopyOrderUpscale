@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "dist/CopyOrder",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

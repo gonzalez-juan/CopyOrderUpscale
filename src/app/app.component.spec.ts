@@ -20,16 +20,18 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'TEST-CUSTOM-COMPONENT'`, () => {
+  it(`should have as title 'CopyOrder'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('TEST-CUSTOM-COMPONENT');
+    expect(app.title).toEqual('CopyÇorder');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('TEST-CUSTOM-COMPONENT app is running!');
+    expect(compiled.querySelector('.content span').textContent).toContain('CopyOrder app is running!');
   });
+
+  
 });

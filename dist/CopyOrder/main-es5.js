@@ -90,12 +90,15 @@
         function AppComponent() {
           _classCallCheck(this, AppComponent);
 
-          this.title = 'CopyOrder';
+          this.title = 'Copy order';
+          this.event = '';
         }
 
         _createClass(AppComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
+            var _this = this;
+
             //this runs when the comonent is rendered
             window.parent.postMessage({
               type: 'initialized'
@@ -106,6 +109,21 @@
                 height: 300
               }
             }, "*");
+            window.addEventListener("message", function (event) {
+              console.log("event", event.data.keys.orderId);
+
+              _this.handleEvent(event.data.keys.orderId);
+            });
+          }
+        }, {
+          key: "handleEvent",
+          value: function handleEvent(messageEvent) {
+            this.event = messageEvent;
+          }
+        }, {
+          key: "clicked",
+          value: function clicked() {
+            alert(this.event);
           }
         }]);
 
@@ -119,23 +137,41 @@
       AppComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
         type: AppComponent,
         selectors: [["app-root"]],
-        decls: 3,
-        vars: 0,
-        consts: [[2, "margin", "0 auto", "width", "800px"]],
+        decls: 6,
+        vars: 1,
+        consts: [[3, "click"]],
         template: function AppComponent_Template(rf, ctx) {
           if (rf & 1) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "h2");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "My first component!!!");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, " Events received: ");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "button", 0);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function AppComponent_Template_button_click_4_listener() {
+              return ctx.clicked();
+            });
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](5, "Copy Order");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
           }
+
+          if (rf & 2) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" orderId is ", ctx.event, " ");
+          }
         },
-        styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FwcC5jb21wb25lbnQuY3NzIn0= */"]
+        styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJhcHAuY29tcG9uZW50LmNzcyJ9 */"]
       });
       /*@__PURE__*/
 
